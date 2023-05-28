@@ -1,6 +1,6 @@
 package com.ztpai.backend.user;
 
-import com.ztpai.backend.ability.Ability;
+import com.ztpai.backend.character.Character;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,12 +13,13 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "user")
-public class User {
+@Entity(name = "my_user")
+public class MyUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     @Column(
             name = "login",
             nullable = false,
@@ -28,7 +29,7 @@ public class User {
 
     private String nickname;
 
-    @OneToMany
-    private Set<Ability> abilitySet;
+    @OneToMany(mappedBy = "user")
+    private Set<Character> characterSet;
 
 }

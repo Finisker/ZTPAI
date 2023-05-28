@@ -5,7 +5,7 @@ import com.ztpai.backend.joinTables.CharacterAttributeMapping;
 import com.ztpai.backend.joinTables.CharacterTalentMapping;
 import com.ztpai.backend.profession.Profession;
 import com.ztpai.backend.race.Race;
-import com.ztpai.backend.user.User;
+import com.ztpai.backend.user.MyUser;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,7 +25,8 @@ public class Character {
     private long id;
 
     @ManyToOne
-    private User user;
+    @JoinColumn(name = "my_user_id",nullable = false)
+    private MyUser user;
 
     @Column(
             name = "name",
