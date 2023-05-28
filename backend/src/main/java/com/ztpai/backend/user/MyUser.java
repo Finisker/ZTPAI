@@ -32,4 +32,9 @@ public class MyUser {
     @OneToMany(mappedBy = "user")
     private Set<Character> characterSet;
 
+    public MyUser(String login, String nickname, Set<Character> characterSet) {
+        this.login = login;
+        this.nickname = nickname;
+        this.characterSet = characterSet;
+    }
 }
