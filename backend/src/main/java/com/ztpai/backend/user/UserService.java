@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -20,6 +21,12 @@ public class UserService {
     }
 
     public void addNewUser(MyUser user) {
+        Optional<MyUser> userOptional = userRepository.findUserByLogin(user.getLogin());
+
+        if (userOptional.isPresent()){
+            throw new IllegalStateException("login taken");
+        }
+
         userRepository.save(user);
     }
 }
