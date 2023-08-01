@@ -1,9 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 $background-color: #D9C09C;
+$testing-background: rgba(230, 170, 206, 0.1);
 $font: Garamond, serif;
 
 html{
-  background-color: $background-color;
-  font-family: $font;
+  background-color: white;
 }
 
+*{
+  background-color: $testing-background;
+  font-family: $font;
+}
