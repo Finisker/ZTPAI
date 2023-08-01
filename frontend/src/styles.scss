@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+$background-color: #D9C09C;
+$font: Garamond, serif;
+
+html{
+  background-color: $background-color;
+  font-family: $font;
+}
+
