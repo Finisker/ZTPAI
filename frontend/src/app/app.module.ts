@@ -11,6 +11,7 @@ import { ContextMenuComponent } from './context-menu/context-menu.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FilterMenuComponent } from './filter-menu/filter-menu.component';
 import { UserNavigationComponent } from './user-navigation/user-navigation.component';
+import { MainMenuComponent } from './main-menu/main-menu.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UserNavigationComponent } from './user-navigation/user-navigation.compo
     ContextMenuComponent,
     SearchBarComponent,
     FilterMenuComponent,
-    UserNavigationComponent
+    UserNavigationComponent,
+    MainMenuComponent
   ],
   imports: [
     BrowserModule,
