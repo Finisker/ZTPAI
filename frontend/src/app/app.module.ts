@@ -7,6 +7,10 @@ import { CharacterMiniatureComponent } from './character-miniature/character-min
 import { CharacterTextSummaryComponent } from './character-text-summary/character-text-summary.component';
 import { CharactersListComponent } from './characters-list/characters-list.component';
 import { FunctionalCharacterMiniatureComponent } from './functional-character-miniature/functional-character-miniature.component';
+import { ContextMenuComponent } from './context-menu/context-menu.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { FilterMenuComponent } from './filter-menu/filter-menu.component';
+import { UserNavigationComponent } from './user-navigation/user-navigation.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { FunctionalCharacterMiniatureComponent } from './functional-character-mi
     CharacterMiniatureComponent,
     CharacterTextSummaryComponent,
     CharactersListComponent,
-    FunctionalCharacterMiniatureComponent
+    FunctionalCharacterMiniatureComponent,
+    ContextMenuComponent,
+    SearchBarComponent,
+    FilterMenuComponent,
+    UserNavigationComponent
   ],
   imports: [
     BrowserModule,
