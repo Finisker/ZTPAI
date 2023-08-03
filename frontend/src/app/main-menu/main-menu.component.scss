@@ -37,6 +37,8 @@ $linear-gradient-bottom: linear-gradient($gradient4,$gradient5 , $gray, $gray, $
   border: none;
   width: fit-content;
   height: fit-content;
+  margin-right: 2vw;
+  margin-top: 1vh;
 }
 
 .User_button:hover{
@@ -44,8 +46,7 @@ $linear-gradient-bottom: linear-gradient($gradient4,$gradient5 , $gray, $gray, $
 }
 
 .User_avatar{
-  padding-right: 2vw;
-  padding-top: 1vh;
+
   height: 10vh;
 }
 
@@ -77,18 +78,15 @@ $linear-gradient-bottom: linear-gradient($gradient4,$gradient5 , $gray, $gray, $
   background: blue;
 }
 
-.separator{
-  position: fixed;
-  top:23vh;
-  left:0;
-  width: 100%;
-  height: 1vh;
-  background-color: black;
-}
-
 .characters{
+  position: fixed;
+  top:30vh;
+  left: 0;
+
+  margin-right: 5vw;
+  margin-left: 5vw;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 

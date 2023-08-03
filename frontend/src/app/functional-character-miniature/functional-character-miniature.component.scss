@@ -1,13 +1,31 @@
+$orange: #D17513;
+$gray: #343A40;
+
 .container{
   width: 80%;
   height: 80%;
   border-style: solid;
-  border-color: black;
-  background-color: pink;
+  border-color: $gray;
+  background-color: $orange;
 }
 
-button{
-  height: 100%;
-  width: 100%;
+.Character_button{
+  width: fit-content;
+  height: fit-content;
   background-color: transparent;
+  border: none;
+}
+
+.Character_button:hover{
+  opacity: 50%;
+}
+
+img{
+  width: 60%;
+  height: auto;
+}
+
+.character_summary{
+  text-align: center;
+
 }
