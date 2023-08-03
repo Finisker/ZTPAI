@@ -4,10 +4,11 @@ $testing-background: rgba(230, 170, 206, 0.1);
 $font: Garamond, serif;
 
 html{
-  background-color: white;
+  background-color: $background-color;
+  height: 100%;
+  width: 100%;
 }
 
 *{
-  background-color: $testing-background;
   font-family: $font;
 }

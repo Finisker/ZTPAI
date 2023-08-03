@@ -4,8 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CharacterMiniatureComponent } from './character-miniature/character-miniature.component';
-import { CharacterTextSummaryComponent } from './character-text-summary/character-text-summary.component';
-import { CharactersListComponent } from './characters-list/characters-list.component';
 import { FunctionalCharacterMiniatureComponent } from './functional-character-miniature/functional-character-miniature.component';
 import { ContextMenuComponent } from './context-menu/context-menu.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
@@ -17,8 +15,6 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
   declarations: [
     AppComponent,
     CharacterMiniatureComponent,
-    CharacterTextSummaryComponent,
-    CharactersListComponent,
     FunctionalCharacterMiniatureComponent,
     ContextMenuComponent,
     SearchBarComponent,
