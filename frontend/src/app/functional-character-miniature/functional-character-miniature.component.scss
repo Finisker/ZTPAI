@@ -2,30 +2,35 @@ $orange: #D17513;
 $gray: #343A40;
 
 .container{
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 90%;
+
   border-style: solid;
+  border-width: 0.2vw;
   border-color: $gray;
   background-color: $orange;
+
+  text-align: center;
 }
 
-.Character_button{
+.character_button{
   width: fit-content;
   height: fit-content;
   background-color: transparent;
   border: none;
+
 }
 
-.Character_button:hover{
+.character_button:hover{
   opacity: 50%;
 }
 
 img{
-  width: 60%;
+  width: 100%;
   height: auto;
 }
 
 .character_summary{
-  text-align: center;
-
+  color: black;
+  font-size: 1vw;
 }
