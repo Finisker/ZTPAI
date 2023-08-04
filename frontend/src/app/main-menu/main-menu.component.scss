@@ -13,6 +13,7 @@ $linear-gradient-bottom: linear-gradient($gradient4,$gradient5 , $gray, $gray, $
 .main-menu-container{
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .top-bar{
@@ -31,10 +32,13 @@ $linear-gradient-bottom: linear-gradient($gradient4,$gradient5 , $gray, $gray, $
   float: left;
 }
 
-.User_button{
-  float: right;
+button{
   background-color: transparent;
   border: none;
+}
+
+.User_button{
+  float: right;
   width: fit-content;
   height: fit-content;
   margin-right: 2vw;
@@ -58,7 +62,7 @@ $linear-gradient-bottom: linear-gradient($gradient4,$gradient5 , $gray, $gray, $
   width: 100%;
   top:12vh;
   left:0;
-  border-bottom: 2px solid black;
+  border-bottom: 0.2vw solid black;
 }
 
 .context-menu-button{
@@ -83,10 +87,34 @@ $linear-gradient-bottom: linear-gradient($gradient4,$gradient5 , $gray, $gray, $
   top:30vh;
   left: 0;
 
-  margin-right: 5vw;
+  width: 90%;
+  height: 65%;
+
+  padding-right: 5vw;
   margin-left: 5vw;
+
   display: grid;
+  align-items: center;
   grid-template-columns: repeat(4, 1fr);
+  grid-gap: 8vh;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
+
+.plus{
+  height: 100%;
+  width: 100%;
+}
+
+.add_character{
+  width: 70%;
+  height: 90%;
+}
+
+.add_character:hover{
+  opacity: 50%;
+}
+
 
 
