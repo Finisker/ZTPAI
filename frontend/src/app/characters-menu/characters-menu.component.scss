@@ -10,7 +10,7 @@ $gradient5:#4f433b;
 $linear-gradient-top: linear-gradient($orange,$orange,$orange, $gradient1, $gradient2, $gradient3,$gradient4);
 $linear-gradient-bottom: linear-gradient($gradient4,$gradient5 , $gray, $gray, $gray);
 
-.main-menu-container{
+.characters-menu-container{
   display: flex;
   flex-direction: column;
   height: 100%;
