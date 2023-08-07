@@ -10,7 +10,7 @@ import { UserNavigationComponent } from './user-navigation/user-navigation.compo
 import { CharactersMenuComponent } from './characters-menu/characters-menu.component';
 import { RacesMenuComponent } from './races-menu/races-menu.component';
 import { ProfessionsMenuComponent } from './professions-menu/professions-menu.component';
-import { SkillsMenuComponent } from './skills-menu/skills-menu.component';
+import { TalentsMenuComponent } from './talents-menu/talents-menu.component';
 import { AbilitiesMenuComponent } from './abilities-menu/abilities-menu.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { RaceSummaryComponent } from './race-summary/race-summary.component';
@@ -27,7 +27,7 @@ import { AttributeSummaryComponent } from './attribute-summary/attribute-summary
     CharactersMenuComponent,
     RacesMenuComponent,
     ProfessionsMenuComponent,
-    SkillsMenuComponent,
+    TalentsMenuComponent,
     AbilitiesMenuComponent,
     TopBarComponent,
     RaceSummaryComponent,
