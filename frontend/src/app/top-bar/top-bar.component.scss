@@ -1,0 +1,89 @@
+$orange: #D17513;
+$gray: #343A40;
+
+$gradient1:#b76b1b;
+$gradient2:#9d6123;
+$gradient3:#83572b;
+$gradient4:#694d33;
+$gradient5:#4f433b;
+
+$linear-gradient-top: linear-gradient($orange,$orange,$orange, $gradient1, $gradient2, $gradient3,$gradient4);
+$linear-gradient-bottom: linear-gradient($gradient4,$gradient5 , $gray, $gray, $gray);
+
+.top-bar{
+  background-image: $linear-gradient-top;
+  position: fixed;
+  height: 12vh;
+  width: 100%;
+  top:0;
+  left:0;
+}
+
+.WH_logo{
+  height: 7vh;
+  padding-left: 2vw;
+  padding-top: 2vh;
+  float: left;
+}
+
+.profile_images{
+  float:right;
+  text-align: center;
+}
+
+.logout_button{
+  position: absolute;
+  top: 30%;
+  left: 87%;
+}
+
+.logout{
+  height: 5vh;
+}
+
+button{
+  background-color: transparent;
+  border: none;
+}
+
+.User_button{
+  width: fit-content;
+  height: fit-content;
+  margin-right: 2vw;
+  margin-top: 1vh;
+}
+
+.User_avatar{
+
+  height: 10vh;
+}
+
+.second-bar{
+  background-image: $linear-gradient-bottom;
+  color: white;
+  position: fixed;
+  height: 10vh;
+  width: 100%;
+  top:12vh;
+  left:0;
+  border-bottom: 0.2vw solid black;
+}
+
+.context-menu-button{
+  background: none;
+  color: white;
+  height: 100%;
+  width: 8%;
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+  text-align: center;
+  font-size: 0.8vw;
+}
+
+.filter_menu{
+  float: right;
+  position: absolute;
+  top: 40%;
+  right: 20%;
+}

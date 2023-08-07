@@ -12,6 +12,7 @@ import { RacesMenuComponent } from './races-menu/races-menu.component';
 import { ProfessionsMenuComponent } from './professions-menu/professions-menu.component';
 import { SkillsMenuComponent } from './skills-menu/skills-menu.component';
 import { AbilitiesMenuComponent } from './abilities-menu/abilities-menu.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AbilitiesMenuComponent } from './abilities-menu/abilities-menu.componen
     RacesMenuComponent,
     ProfessionsMenuComponent,
     SkillsMenuComponent,
-    AbilitiesMenuComponent
+    AbilitiesMenuComponent,
+    TopBarComponent
   ],
   imports: [
     BrowserModule,
