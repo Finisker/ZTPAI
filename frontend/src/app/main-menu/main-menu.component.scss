@@ -43,10 +43,6 @@ $linear-gradient-bottom: linear-gradient($gradient4,$gradient5 , $gray, $gray, $
   left: 87%;
 }
 
-.logout_button:hover{
-  opacity: 50%;
-}
-
 .logout{
   height: 5vh;
 }
@@ -61,10 +57,6 @@ button{
   height: fit-content;
   margin-right: 2vw;
   margin-top: 1vh;
-}
-
-.User_button:hover{
-  opacity: 50%;
 }
 
 .User_avatar{
@@ -91,13 +83,8 @@ button{
   border-top: none;
   border-left: none;
   border-bottom: none;
-  text-align: left;
-  padding-left: 1vw;
+  text-align: center;
   font-size: 0.8vw;
-}
-
-.context-menu-button:hover{
-  background: blue;
 }
 
 .filter_menu{
@@ -140,7 +127,7 @@ button{
 }
 
 .add_character:hover{
-  opacity: 50%;
+  cursor: pointer;
 }
 
 
