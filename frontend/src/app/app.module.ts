@@ -16,6 +16,9 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { RaceSummaryComponent } from './race-summary/race-summary.component';
 import { AttributesMenuComponent } from './attributes-menu/attributes-menu.component';
 import { AttributeSummaryComponent } from './attribute-summary/attribute-summary.component';
+import { AbilitySummaryComponent } from './ability-summary/ability-summary.component';
+import { ProffessionSummaryComponent } from './proffession-summary/proffession-summary.component';
+import { TalentSummaryComponent } from './talent-summary/talent-summary.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { AttributeSummaryComponent } from './attribute-summary/attribute-summary
     TopBarComponent,
     RaceSummaryComponent,
     AttributesMenuComponent,
-    AttributeSummaryComponent
+    AttributeSummaryComponent,
+    AbilitySummaryComponent,
+    ProffessionSummaryComponent,
+    TalentSummaryComponent
   ],
   imports: [
     BrowserModule,
