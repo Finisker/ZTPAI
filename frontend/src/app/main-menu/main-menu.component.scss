@@ -26,6 +26,10 @@ $linear-gradient-bottom: linear-gradient($gradient4,$gradient5 , $gray, $gray, $
   float: left;
 }
 
+.Big_WH_logo{
+  height: 20vh;
+}
+
 .profile_images{
   float:right;
   text-align: center;
@@ -94,4 +98,15 @@ button{
 
 .active{
   background-color: red;
+}
+
+.main-menu-container{
+  position: relative;
+  top: 22.3vh;
+  overflow-x: hidden;
+}
+
+.main-img{
+  padding: 0;
+  margin: 0;
 }

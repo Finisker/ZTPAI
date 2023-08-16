@@ -25,29 +25,32 @@
     </div>
   <div class="lower-container">
 
-    <div class="test" *ngIf="this.currentPage==='characters'">
+    <div *ngIf="currentPage==='characters'">
       <app-characters-menu></app-characters-menu>
     </div>
 
-    <div class="test" *ngIf="this.currentPage==='races'">
+    <div *ngIf="currentPage==='races'">
       <app-races-menu></app-races-menu>
     </div>
 
-    <div class="test" *ngIf="this.currentPage==='professions'">
+    <div *ngIf="currentPage==='professions'">
       <app-professions-menu></app-professions-menu>
     </div>
 
-    <div class="test" *ngIf="this.currentPage==='talents'">
+    <div *ngIf="currentPage==='talents'">
       <app-talents-menu></app-talents-menu>
     </div>
 
-    <div class="test" *ngIf="this.currentPage==='abilities'">
+    <div *ngIf="currentPage==='abilities'">
       <app-abilities-menu></app-abilities-menu>
     </div>
 
-    <div class="test" *ngIf="this.currentPage==='attributes'">
+    <div *ngIf="currentPage==='attributes'">
       <app-attributes-menu></app-attributes-menu>
     </div>
+  </div>
 
+  <div class="main-img-container" *ngIf="currentPage===''">
+    <img class="main-img" src={{imgPath}} alt="Warhammer Fantasy">
   </div>
 </div>

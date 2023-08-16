@@ -1,16 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-main-menu',
   templateUrl: './main-menu.component.html',
   styleUrls: ['./main-menu.component.scss']
 })
-export class MainMenuComponent {
+export class MainMenuComponent implements OnInit{
   private _currentPage : string = "";
+  private _imgPath : string = "";
+
+  ngOnInit(){
+    const now = new Date();
+    const today = now.toUTCString().slice(0,3);
+
+    this._imgPath = "assets/wallpaper" + today + ".jpg";
+  }
 
   get currentPage(): string {
     let currentPageStorage = sessionStorage.getItem("currentPage");
     return currentPageStorage ? currentPageStorage : "";
+  }
+
+  get imgPath(): string {
+    return this._imgPath;
   }
 
   public setCurrentPage(currentPage:string) : void{
@@ -24,5 +36,4 @@ export class MainMenuComponent {
     this.setCurrentPage(result);
     sessionStorage.setItem("currentPage",this._currentPage);
   }
-
 }
