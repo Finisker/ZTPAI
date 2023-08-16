@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { FunctionalCharacterMiniatureComponent } from './functional-character-miniature/functional-character-miniature.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FilterMenuComponent } from './filter-menu/filter-menu.component';
-import { UserNavigationComponent } from './user-navigation/user-navigation.component';
 import { CharactersMenuComponent } from './characters-menu/characters-menu.component';
 import { RacesMenuComponent } from './races-menu/races-menu.component';
 import { ProfessionsMenuComponent } from './professions-menu/professions-menu.component';
@@ -26,7 +25,6 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
     FunctionalCharacterMiniatureComponent,
     SearchBarComponent,
     FilterMenuComponent,
-    UserNavigationComponent,
     CharactersMenuComponent,
     RacesMenuComponent,
     ProfessionsMenuComponent,
