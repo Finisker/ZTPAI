@@ -17,10 +17,15 @@
   margin-bottom: 2vh;
 }
 
-.specialization{
-  font-size: medium;
-}
-
 .margined{
   margin-right: 0.5vw;
+}
+
+.specialization{
+  margin-top: 1vh;
+  display: flex;
+}
+
+.specialization-text{
+  margin-right: 0.3vw;
 }
