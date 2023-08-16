@@ -12,12 +12,12 @@
     </div>
     <div class="second-bar">
 
-        <button [ngClass]="{'active' : currentPage === 'characters'}" class="context-menu-button" (click)="setCurrentPage('characters')">Characters</button>
-        <button [ngClass]="{'active' : currentPage === 'races'}" class="context-menu-button" (click)="setCurrentPage('races')">Races</button>
-        <button [ngClass]="{'active' : currentPage === 'professions'}" class="context-menu-button" (click)="setCurrentPage('professions')">Professions</button>
-        <button [ngClass]="{'active' : currentPage === 'talents'}" class="context-menu-button" (click)="setCurrentPage('talents')">Talents</button>
-        <button [ngClass]="{'active' : currentPage === 'abilities'}" class="context-menu-button" (click)="setCurrentPage('abilities')">Abilities</button>
-        <button [ngClass]="{'active' : currentPage === 'attributes'}" class="context-menu-button" (click)="setCurrentPage('attributes')">Attributes</button>
+        <button [ngClass]="{'active' : currentPage === 'characters'}" class="context-menu-button" (click)="handleCurrentPageChange('characters')">Characters</button>
+        <button [ngClass]="{'active' : currentPage === 'races'}" class="context-menu-button" (click)="handleCurrentPageChange('races')">Races</button>
+        <button [ngClass]="{'active' : currentPage === 'professions'}" class="context-menu-button" (click)="handleCurrentPageChange('professions')">Professions</button>
+        <button [ngClass]="{'active' : currentPage === 'talents'}" class="context-menu-button" (click)="handleCurrentPageChange('talents')">Talents</button>
+        <button [ngClass]="{'active' : currentPage === 'abilities'}" class="context-menu-button" (click)="handleCurrentPageChange('abilities')">Abilities</button>
+        <button [ngClass]="{'active' : currentPage === 'attributes'}" class="context-menu-button" (click)="handleCurrentPageChange('attributes')">Attributes</button>
 
       <div class="filter_menu">
         <app-filter-menu></app-filter-menu>
