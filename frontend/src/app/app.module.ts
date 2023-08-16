@@ -12,13 +12,13 @@ import { RacesMenuComponent } from './races-menu/races-menu.component';
 import { ProfessionsMenuComponent } from './professions-menu/professions-menu.component';
 import { TalentsMenuComponent } from './talents-menu/talents-menu.component';
 import { AbilitiesMenuComponent } from './abilities-menu/abilities-menu.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
 import { RaceSummaryComponent } from './race-summary/race-summary.component';
 import { AttributesMenuComponent } from './attributes-menu/attributes-menu.component';
 import { AttributeSummaryComponent } from './attribute-summary/attribute-summary.component';
 import { AbilitySummaryComponent } from './ability-summary/ability-summary.component';
 import { ProffessionSummaryComponent } from './proffession-summary/proffession-summary.component';
 import { TalentSummaryComponent } from './talent-summary/talent-summary.component';
+import { MainMenuComponent } from './main-menu/main-menu.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +32,13 @@ import { TalentSummaryComponent } from './talent-summary/talent-summary.componen
     ProfessionsMenuComponent,
     TalentsMenuComponent,
     AbilitiesMenuComponent,
-    TopBarComponent,
     RaceSummaryComponent,
     AttributesMenuComponent,
     AttributeSummaryComponent,
     AbilitySummaryComponent,
     ProffessionSummaryComponent,
-    TalentSummaryComponent
+    TalentSummaryComponent,
+    MainMenuComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import {ProfessionsMenuComponent} from "./professions-menu/professions-menu.comp
 import {TalentsMenuComponent} from "./talents-menu/talents-menu.component";
 import {AbilitiesMenuComponent} from "./abilities-menu/abilities-menu.component";
 import {AttributesMenuComponent} from "./attributes-menu/attributes-menu.component";
+import {MainMenuComponent} from "./main-menu/main-menu.component";
 
 const routes: Routes = [
   { path: 'characters', component: CharactersMenuComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'talents', component: TalentsMenuComponent},
   { path: 'abilities', component: AbilitiesMenuComponent},
   { path: 'attributes', component: AttributesMenuComponent},
+  { path: 'main', component: MainMenuComponent},
 ];
 
 @NgModule({

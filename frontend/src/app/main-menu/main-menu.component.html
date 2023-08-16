@@ -1,0 +1,53 @@
+<div class="main-menu-container">
+    <div class="top-bar">
+      <img class="WH_logo" src="assets/WH_logo.svg" alt="Warhammer Fantasy">
+      <div class="profile_images">
+        <button class="logout_button">
+          <img class="logout" src="assets/logout.png" alt="Log out">
+        </button>
+        <button class="User_button">
+          <img class="User_avatar" src="assets/placeholder-avatar.jpg" alt="User avatar">
+        </button>
+      </div>
+    </div>
+    <div class="second-bar">
+
+        <button [ngClass]="{'active' : currentPage === 'characters'}" class="context-menu-button" (click)="setCurrentPage('characters')">Characters</button>
+        <button [ngClass]="{'active' : currentPage === 'races'}" class="context-menu-button" (click)="setCurrentPage('races')">Races</button>
+        <button [ngClass]="{'active' : currentPage === 'professions'}" class="context-menu-button" (click)="setCurrentPage('professions')">Professions</button>
+        <button [ngClass]="{'active' : currentPage === 'talents'}" class="context-menu-button" (click)="setCurrentPage('talents')">Talents</button>
+        <button [ngClass]="{'active' : currentPage === 'abilities'}" class="context-menu-button" (click)="setCurrentPage('abilities')">Abilities</button>
+        <button [ngClass]="{'active' : currentPage === 'attributes'}" class="context-menu-button" (click)="setCurrentPage('attributes')">Attributes</button>
+
+      <div class="filter_menu">
+        <app-filter-menu></app-filter-menu>
+      </div>
+    </div>
+  <div class="lower-container">
+
+    <div class="test" *ngIf="this.currentPage==='characters'">
+      <app-characters-menu></app-characters-menu>
+    </div>
+
+    <div class="test" *ngIf="this.currentPage==='races'">
+      <app-races-menu></app-races-menu>
+    </div>
+
+    <div class="test" *ngIf="this.currentPage==='professions'">
+      <app-professions-menu></app-professions-menu>
+    </div>
+
+    <div class="test" *ngIf="this.currentPage==='talents'">
+      <app-talents-menu></app-talents-menu>
+    </div>
+
+    <div class="test" *ngIf="this.currentPage==='abilities'">
+      <app-abilities-menu></app-abilities-menu>
+    </div>
+
+    <div class="test" *ngIf="this.currentPage==='attributes'">
+      <app-attributes-menu></app-attributes-menu>
+    </div>
+
+  </div>
+</div>
