@@ -4,6 +4,7 @@ $orange: #D17513;
 .container{
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 .text{
@@ -29,14 +30,11 @@ $orange: #D17513;
   flex-direction: column;
 }
 
-.container{
-  justify-content: space-between;
-}
-
 .details{
   display: flex;
   flex-direction: row;
   margin-bottom: 8vh;
+  font-size: large;
 }
 
 .password{
