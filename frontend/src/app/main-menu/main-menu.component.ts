@@ -13,7 +13,7 @@ export class MainMenuComponent implements OnInit{
     const now = new Date();
     const today = now.toUTCString().slice(0,3);
 
-    this._imgPath = "assets/wallpaper" + today + ".jpg";
+    this._imgPath = "assets/images/daily_wallpaper/wallpaper" + today + ".jpg";
   }
 
   get currentPage(): string {
