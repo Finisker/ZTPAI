@@ -1,0 +1,6 @@
+.info-grid{
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 8vh;
+}
