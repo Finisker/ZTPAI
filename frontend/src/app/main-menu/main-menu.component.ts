@@ -36,4 +36,8 @@ export class MainMenuComponent implements OnInit{
     this.setCurrentPage(result);
     sessionStorage.setItem("currentPage",this._currentPage);
   }
+
+  public logout() : void{
+    window.location.assign("login");
+  }
 }
