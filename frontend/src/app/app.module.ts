@@ -18,6 +18,7 @@ import { AbilitySummaryComponent } from './ability-summary/ability-summary.compo
 import { ProffessionSummaryComponent } from './proffession-summary/proffession-summary.component';
 import { TalentSummaryComponent } from './talent-summary/talent-summary.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
+import { UserSettingsComponent } from './user-settings/user-settings.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
     AbilitySummaryComponent,
     ProffessionSummaryComponent,
     TalentSummaryComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    UserSettingsComponent
   ],
   imports: [
     BrowserModule,
