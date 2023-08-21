@@ -26,6 +26,13 @@ public class MyUser {
             unique = true
     )
     private String login;
+
+    @Column(
+            name = "email",
+            nullable = false,
+            unique = true
+    )
+    private String email;
     @Column(
             name = "password",
             nullable = false
@@ -34,13 +41,13 @@ public class MyUser {
 
     private String nickname;
 
-
     @OneToMany(mappedBy = "user")
     private Set<Character> characterSet;
 
-    public MyUser(String login, String password, String nickname, Set<Character> characterSet) {
+    public MyUser(String login, String password, String email, String nickname, Set<Character> characterSet) {
         this.login = login;
         this.password = password;
+        this.email = email;
         this.nickname = nickname;
         this.characterSet = characterSet;
     }
