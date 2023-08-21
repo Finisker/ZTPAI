@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserSettingsComponent } from './user-settings.component';
+import { UserSettingsMenuComponent } from './user-settings-menu.component';
 
 describe('UserSettingsComponent', () => {
-  let component: UserSettingsComponent;
-  let fixture: ComponentFixture<UserSettingsComponent>;
+  let component: UserSettingsMenuComponent;
+  let fixture: ComponentFixture<UserSettingsMenuComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [UserSettingsComponent]
+      declarations: [UserSettingsMenuComponent]
     });
-    fixture = TestBed.createComponent(UserSettingsComponent);
+    fixture = TestBed.createComponent(UserSettingsMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

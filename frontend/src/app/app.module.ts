@@ -18,7 +18,7 @@ import { AbilitySummaryComponent } from './ability-summary/ability-summary.compo
 import { ProffessionSummaryComponent } from './proffession-summary/proffession-summary.component';
 import { TalentSummaryComponent } from './talent-summary/talent-summary.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
-import { UserSettingsComponent } from './user-settings/user-settings.component';
+import { UserSettingsMenuComponent } from './user-settings-menu/user-settings-menu.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,7 @@ import { UserSettingsComponent } from './user-settings/user-settings.component';
     ProffessionSummaryComponent,
     TalentSummaryComponent,
     MainMenuComponent,
-    UserSettingsComponent
+    UserSettingsMenuComponent
   ],
   imports: [
     BrowserModule,
