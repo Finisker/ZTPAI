@@ -5,7 +5,7 @@
         <button class="logout_button">
           <img class="logout" src="../../assets/images/logout.png" alt="Log out">
         </button>
-        <button class="User_button">
+        <button class="User_button" (click)="handleCurrentPageChange('user')">
           <img class="User_avatar" src="../../assets/images/placeholder-avatar.jpg" alt="User avatar">
         </button>
       </div>
@@ -47,6 +47,10 @@
 
     <div *ngIf="currentPage==='attributes'">
       <app-attributes-menu></app-attributes-menu>
+    </div>
+
+    <div *ngIf="currentPage==='user'">
+      <app-user-settings></app-user-settings>
     </div>
   </div>
 
