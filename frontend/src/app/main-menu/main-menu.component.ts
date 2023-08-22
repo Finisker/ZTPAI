@@ -21,10 +21,6 @@ export class MainMenuComponent implements OnInit{
     return currentPageStorage ? currentPageStorage : "";
   }
 
-  get imgPath(): string {
-    return this._imgPath;
-  }
-
   public setCurrentPage(currentPage:string) : void{
     this._currentPage = currentPage;
 
@@ -35,9 +31,5 @@ export class MainMenuComponent implements OnInit{
     let result = this._currentPage != currentPage ? currentPage : "";
     this.setCurrentPage(result);
     sessionStorage.setItem("currentPage",this._currentPage);
-  }
-
-  public logout() : void{
-    window.location.assign("login");
   }
 }
