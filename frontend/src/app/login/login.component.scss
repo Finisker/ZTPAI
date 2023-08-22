@@ -1,0 +1,93 @@
+$background-color: #D9C09C;
+$orange: #D17513;
+$gray: #343A40;
+
+.container{
+  display: flex;
+  flex-direction: row;
+
+  height: 100%;
+  width: 100%;
+
+  justify-content: space-around;
+  align-content: center;
+
+  background-image: linear-gradient($orange,$gray);
+}
+
+.login-container{
+
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+
+  width: 35%;
+  height: 50%;
+
+  border: solid black 0.3vh;
+  border-radius: 1vw;
+
+  background-color: $background-color;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container{
+  height: 20%;
+  margin-bottom: 6vh;
+}
+
+.logo{
+  height: 100%;
+}
+
+.login-input{
+  width: 50%;
+  height: 10%;
+
+  margin-bottom: 4vh;
+}
+
+.password-input{
+  width: 50%;
+  height: 10%;
+
+  margin-bottom: 3vh;
+}
+
+.login-button-container{
+  width: 20%;
+  height: 10%;
+
+  margin-bottom: 2vh;
+}
+
+.register{
+}
+
+input{
+  height: 100%;
+  width:100%;
+  font-size: medium;
+
+  text-indent: 1vw;
+}
+
+p{
+  font-size: x-large;
+}
+
+button{
+  width: 100%;
+  height: 100%;
+
+  border-radius: 1vh;
+
+  border: none;
+
+  background-color: $orange;
+}
