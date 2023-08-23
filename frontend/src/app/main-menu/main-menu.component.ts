@@ -26,6 +26,10 @@ export class MainMenuComponent implements OnInit{
 
   }
 
+  get imgPath(){
+    return this._imgPath;
+  }
+
   public handleCurrentPageChange(currentPage:string) : void{
 
     let result = this._currentPage != currentPage ? currentPage : "";
