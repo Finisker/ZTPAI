@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class FunctionalCharacterMiniatureComponent {
 
+
+  // public openNewWindow(url:string , features:string): boolean{
+  //   window.open(url,'popup',features);
+  //   return false;
+  // }
+
 }
