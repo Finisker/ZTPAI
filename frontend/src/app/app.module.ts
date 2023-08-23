@@ -21,6 +21,8 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
 import { UserSettingsMenuComponent } from './user-settings-menu/user-settings-menu.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { CharacterWindowComponent } from './character-window/character-window.component';
+import { CharacterCreationComponent } from './character-creation/character-creation.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { RegisterComponent } from './register/register.component';
     MainMenuComponent,
     UserSettingsMenuComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CharacterWindowComponent,
+    CharacterCreationComponent
   ],
   imports: [
     BrowserModule,
