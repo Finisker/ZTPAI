@@ -1,6 +1,7 @@
 import {SocialClass} from "./socialClass";
 import {Ability} from "./ability";
 import {Attribute} from "./attribute";
+import {Talent} from "./talent";
 
 export class Profession{
   name!: string;
