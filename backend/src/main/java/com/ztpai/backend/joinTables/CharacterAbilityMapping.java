@@ -1,6 +1,6 @@
 package com.ztpai.backend.joinTables;
 
-import com.ztpai.backend.attribute.Attribute;
+import com.ztpai.backend.ability.Ability;
 import com.ztpai.backend.character.Character;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -24,8 +24,8 @@ public class CharacterAbilityMapping {
     private Character character;
 
     @ManyToOne
-    @JoinColumn(name = "attribute_id")
-    private Attribute attribute;
+    @JoinColumn(name = "ability_id")
+    private Ability ability;
 
     private int value;
 }
