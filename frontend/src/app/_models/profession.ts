@@ -11,7 +11,6 @@ export class Profession{
   equipment!: string;
   level! : number;
   socialClass!: SocialClass;
-
   abilitySet!: Ability[];
   talentSet!: Talent[];
   attributeSet!: Attribute[];
