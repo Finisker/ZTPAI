@@ -1,6 +1,7 @@
 package com.ztpai.backend.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,15 +17,32 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public List<MyUser> getUsers(){
+    public List<User> getUsers(){
         return userRepository.findAll();
     }
 
-    public void addNewUser(MyUser user) {
-        Optional<MyUser> userOptional = userRepository.findUserByLogin(user.getLogin());
+    public User getUserByEmail(String email) {
+        return userRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException("User not found"));
+    }
+
+    public User getUserById(Integer id) {
+        return userRepository.findById(id).orElseThrow( () -> new UsernameNotFoundException("User not found"));
+    }
+
+    public User getUserByUniqueID(String uniqueID) {
+        return userRepository.findByUniqueID(uniqueID).orElseThrow(() -> new UsernameNotFoundException("User not found"));
+    }
+
+    public void addNewUser(User user) {
+        Optional<User> userOptional = userRepository.findByLogin(user.getLogin());
+        Optional<User> userOptional2 = userRepository.findByEmail(user.getLogin());
 
         if (userOptional.isPresent()){
             throw new IllegalStateException("login taken");
+        }
+
+        if (userOptional2.isPresent()){
+            throw new IllegalStateException("email taken");
         }
 
         userRepository.save(user);

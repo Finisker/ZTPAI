@@ -1,6 +1,6 @@
 package com.ztpai.backend.security.token;
 
-import com.example.gigachatb.user.User;
+import com.ztpai.backend.user.User;
 import jakarta.persistence.*;
 import lombok.*;
 

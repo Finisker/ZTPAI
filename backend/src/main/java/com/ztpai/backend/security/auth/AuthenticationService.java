@@ -1,22 +1,21 @@
 package com.ztpai.backend.security.auth;
 
-
-import com.example.gigachatb.security.jwt.JWTService;
-import com.example.gigachatb.security.token.Token;
-import com.example.gigachatb.security.token.TokenService;
-import com.example.gigachatb.security.token.TokenType;
-import com.example.gigachatb.user.Role;
-import com.example.gigachatb.user.User;
-import com.example.gigachatb.user.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ztpai.backend.security.jwt.JWTService;
+import com.ztpai.backend.security.token.Token;
+import com.ztpai.backend.security.token.TokenService;
+import com.ztpai.backend.security.token.TokenType;
+import com.ztpai.backend.user.User;
+import com.ztpai.backend.user.Role;
+import com.ztpai.backend.user.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.authentication.AuthenticationManager;
 
 import java.io.IOException;
 import java.sql.Timestamp;
@@ -33,16 +32,19 @@ public class AuthenticationService {
 
     public AuthenticationResponse register(RegisterRequest request) {
         var user = User.builder()
-                .firstname(request.getFirstname())
-                .lastname(request.getLastname())
+                .login(request.getLogin())
+                .nickname(request.getNickname())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.USER)
                 .build();
-        userService.addUser(user);
+
+        userService.addNewUser(user);
+
         var token = jwtService.generateToken(user);
         var refreshToken = jwtService.generateRefreshToken(user);
         saveUserToken(user,token);
+
         return AuthenticationResponse.builder(
                 )
                 .token(token)
@@ -106,11 +108,9 @@ public class AuthenticationService {
     }
 
     private void revokeTokens(User user) {
-        var validTokens = tokenService.getAllValidTokenByUser(user.getUserId());
+        var validTokens = tokenService.getAllValidTokenByUser(user.getId());
         if (validTokens.isEmpty()) return;
-        validTokens.forEach(token -> {
-            token.setRevoked(true);
-        });
+        validTokens.forEach(token -> token.setRevoked(true));
         tokenService.saveAllTokens(validTokens);
     }
 }

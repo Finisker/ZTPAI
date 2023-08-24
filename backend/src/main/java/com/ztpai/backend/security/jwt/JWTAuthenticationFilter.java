@@ -1,6 +1,6 @@
 package com.ztpai.backend.security.jwt;
 
-import com.example.gigachatb.security.token.TokenService;
+import com.ztpai.backend.security.token.TokenService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
