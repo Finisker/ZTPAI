@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpBackend, HttpClient, HttpHeaders} from "@angular/common/http";
 import {User} from "../_models/user";
-import {AuthResponse} from "../_models/AuthResponse";
+import {AuthResponse} from "../_models/authResponse";
 import {shareReplay} from "rxjs";
-import {AuthRequest} from "../_models/AuthRequest";
+import {AuthRequest} from "../_models/authRequest";
 
 @Injectable({
   providedIn: 'root'
