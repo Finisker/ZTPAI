@@ -1,3 +1,5 @@
+import {Character} from "./character";
+
 export class User {
   login!: string;
   email!: string;
