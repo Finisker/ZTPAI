@@ -15,7 +15,6 @@ export class FunctionalCharacterMiniatureComponent {
     this.character = new Character();
   }
 
-
   // public openNewWindow(url:string , features:string): boolean{
   //   window.open(url,'popup',features);
   //   return false;

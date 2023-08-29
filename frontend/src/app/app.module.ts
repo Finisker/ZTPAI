@@ -25,6 +25,7 @@ import {AuthModule} from "./authentication/auth.module";
 import {AuthService} from "./_services/auth.service";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AuthInterceptor} from "./interceptors/auth.interceptor";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import {AuthInterceptor} from "./interceptors/auth.interceptor";
     AppRoutingModule,
     AuthModule,
     HttpClientModule,
+    CommonModule
   ],
   providers: [AuthService, {provide:
 
