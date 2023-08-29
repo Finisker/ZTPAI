@@ -1,20 +1,5 @@
-<div class="abilities-menu-container">
-  <app-ability-summary></app-ability-summary>
+<div class="abilities-menu-container" *ngFor="let ability of abilities">
+  <app-ability-summary [ability]="ability"></app-ability-summary>
   <hr>
-  <app-ability-summary></app-ability-summary>
-  <hr>
-  <app-ability-summary></app-ability-summary>
-  <hr>
-  <app-ability-summary></app-ability-summary>
-  <hr>
-  <app-ability-summary></app-ability-summary>
-  <hr>
-  <app-ability-summary></app-ability-summary>
-  <hr>
-  <app-ability-summary></app-ability-summary>
-  <hr>
-  <app-ability-summary></app-ability-summary>
-  <hr>
-  <app-ability-summary></app-ability-summary>
-  <hr class="transparent">
 </div>
+<hr class="transparent">
