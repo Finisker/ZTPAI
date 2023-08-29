@@ -19,10 +19,12 @@ import { ProffessionSummaryComponent } from './menus/proffession-summary/proffes
 import { TalentSummaryComponent } from './menus/talent-summary/talent-summary.component';
 import { MainMenuComponent } from './menus/main-menu/main-menu.component';
 import { UserSettingsMenuComponent } from './menus/user-settings-menu/user-settings-menu.component';
-import { LoginComponent } from './authentication/login/login.component';
-import { RegisterComponent } from './authentication/register/register.component';
 import { CharacterWindowComponent } from './character-menagement/character-window/character-window.component';
 import { CharacterCreationComponent } from './character-menagement/character-creation/character-creation.component';
+import {AuthModule} from "./authentication/auth.module";
+import {AuthService} from "./_services/auth.service";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {AuthInterceptor} from "./interceptors/auth.interceptor";
 
 @NgModule({
   declarations: [
@@ -43,16 +45,21 @@ import { CharacterCreationComponent } from './character-menagement/character-cre
     TalentSummaryComponent,
     MainMenuComponent,
     UserSettingsMenuComponent,
-    LoginComponent,
-    RegisterComponent,
     CharacterWindowComponent,
     CharacterCreationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [AuthService, {provide:
+
+    HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
