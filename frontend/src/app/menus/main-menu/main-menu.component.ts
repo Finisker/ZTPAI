@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from "../../_services/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-main-menu',
@@ -8,6 +10,11 @@ import { Component, OnInit } from '@angular/core';
 export class MainMenuComponent implements OnInit{
   private _currentPage : string = "";
   private _imgPath : string = "";
+
+
+  constructor(private router: Router,
+              private authService: AuthService) {
+  }
 
   ngOnInit(){
     const now = new Date();
@@ -35,5 +42,13 @@ export class MainMenuComponent implements OnInit{
     let result = this._currentPage != currentPage ? currentPage : "";
     this.setCurrentPage(result);
     sessionStorage.setItem("currentPage",this._currentPage);
+  }
+
+  logout() {
+
+    this.authService.logout().subscribe(res => {
+      this.router.navigate(['/login']);
+    });
+
   }
 }

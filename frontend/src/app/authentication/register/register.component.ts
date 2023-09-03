@@ -22,6 +22,7 @@ export class RegisterComponent {
   }
 
   onSubmit() {
+    console.log("submit");
     this.userService.save(this.user).subscribe(response =>{
 
       console.log(response);
