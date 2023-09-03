@@ -8,7 +8,7 @@ import {Character} from "../_models/character";
 })
 export class CharacterService {
 
-  readonly url:string = "http://localhost:8080/api/v1/character";
+  readonly url:string = "http://localhost:8080/api/v1/characters";
   constructor(private httpClient: HttpClient) { }
 
   getCharacters() {

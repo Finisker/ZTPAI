@@ -7,7 +7,7 @@ import {SocialClass} from "../_models/socialClass";
 })
 export class SocialClassService {
 
-  readonly url:string = "http://localhost:8080/api/v1/socialClass";
+  readonly url:string = "http://localhost:8080/api/v1/socialClasses";
   constructor(private httpClient: HttpClient) { }
 
   getSocialClasses() {

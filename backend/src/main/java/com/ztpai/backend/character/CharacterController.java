@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/character")
+@RequestMapping(path = "api/v1/characters")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CharacterController {
 
     private final CharacterService characterService;

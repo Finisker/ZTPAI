@@ -7,7 +7,7 @@ import {Race} from "../_models/race";
 })
 export class RaceService {
 
-  readonly url:string = "http://localhost:8080/api/v1/race";
+  readonly url:string = "http://localhost:8080/api/v1/races";
   constructor(private httpClient: HttpClient) { }
 
   getRaces() {

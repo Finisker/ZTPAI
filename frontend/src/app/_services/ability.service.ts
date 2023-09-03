@@ -7,7 +7,7 @@ import {Ability} from "../_models/ability";
 })
 export class AbilityService {
 
-  readonly url:string = "http://localhost:8080/api/v1/ability";
+  readonly url:string = "http://localhost:8080/api/v1/abilities";
   constructor(private httpClient: HttpClient) { }
 
   getAbilities() {

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/ability")
+@RequestMapping(path = "api/v1/abilities")
 @CrossOrigin(origins = "http://localhost:4200")
 public class AbilityController {
 
