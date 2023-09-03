@@ -20,7 +20,10 @@ export class LoginComponent {
   }
 
   onSubmit() {
+    console.log("onSubmit");
+    console.log(this.authRequest);
     this.authService.authenticate(this.authRequest).subscribe(response => {
+      console.log("respone");
       localStorage.setItem('token', response.token);
       localStorage.setItem('refreshToken', response.refreshToken);
       localStorage.setItem('id', response.uniqueId);

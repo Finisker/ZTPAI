@@ -3,8 +3,6 @@ package com.ztpai.backend.user;
 import com.ztpai.backend.character.Character;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.Generated;
-import org.hibernate.annotations.GenerationTime;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -23,11 +21,6 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "my_user_id")
     private int userId;
-
-    @Basic
-    @Generated(GenerationTime.INSERT)
-    @Column(name = "unique_id", unique = true,columnDefinition = "varchar(255) default '#'::text || lpad(((nextval('my_user_my_user_id_seq'::regclass))::character varying)::text, 5, '0'::text)")
-    private String uniqueID;
 
     @Column(
             name = "login",
