@@ -1,7 +1,7 @@
 <div class="container">
   <div class="top">
     <p class="margined bold large">{{ability.name}}</p>
-    <p class="margined bold large">({{ability.attribute}})</p>
+    <p class="margined bold large">({{ability.attribute.name}})</p>
     <p class="margined large">{{ability.advanced}}</p>
   </div>
   <div>
@@ -9,7 +9,6 @@
   </div>
   <div *ngIf="ability.specializations.length>0" class="specialization large">
     <p class="bold large specialization-text">Specializations: </p>
-    <p class="large">{{ability.specializations}}</p>
+    <p>{{ability.specializations}}</p>
   </div>
-  <button (click)="test()">TEST-summary!</button>
 </div>

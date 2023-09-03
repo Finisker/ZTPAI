@@ -27,7 +27,8 @@ public class Ability {
     )
     private String description;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "attribute_id",nullable = false)
     private Attribute attribute;
 
     @Column(
