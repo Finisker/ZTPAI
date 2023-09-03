@@ -22,9 +22,7 @@ import { UserSettingsMenuComponent } from './menus/user-settings-menu/user-setti
 import { CharacterWindowComponent } from './character-menagement/character-window/character-window.component';
 import { CharacterCreationComponent } from './character-menagement/character-creation/character-creation.component';
 import {AuthModule} from "./authentication/auth.module";
-import {AuthService} from "./_services/auth.service";
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {AuthInterceptor} from "./interceptors/auth.interceptor";
+import {HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
 
 @NgModule({
@@ -56,12 +54,7 @@ import {CommonModule} from "@angular/common";
     HttpClientModule,
     CommonModule
   ],
-  providers: [AuthService, {provide:
-
-    HTTP_INTERCEPTORS,
-    useClass: AuthInterceptor,
-    multi: true
-  }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

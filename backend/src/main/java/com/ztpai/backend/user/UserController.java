@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping(path = "api/v1/user")
 public class UserController {
@@ -23,7 +23,7 @@ public class UserController {
 
     @PostMapping("/register")
     public void registerNewUser(@RequestBody User user){
-        userService.addNewUser(user);
+        userService.addUser(user);
     }
 
 }

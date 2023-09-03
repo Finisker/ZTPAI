@@ -7,7 +7,7 @@ import {Talent} from "../_models/talent";
 })
 export class TalentService {
 
-  readonly url:string = "http://localhost:8080/api/v1/talents";
+  readonly url:string = "http://localhost:8080/api/v1/talent";
   constructor(private httpClient: HttpClient) { }
 
   getTalents() {

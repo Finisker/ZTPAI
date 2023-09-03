@@ -7,7 +7,7 @@ import {Profession} from "../_models/profession";
 })
 export class ProfessionService {
 
-  readonly url:string = "http://localhost:8080/api/v1/professions";
+  readonly url:string = "http://localhost:8080/api/v1/profession";
   constructor(private httpClient: HttpClient) { }
 
   getProfessions() {

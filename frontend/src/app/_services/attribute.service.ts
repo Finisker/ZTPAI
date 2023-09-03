@@ -7,7 +7,7 @@ import {Attribute} from "../_models/attribute";
 })
 export class AttributeService {
 
-  readonly url:string = "http://localhost:8080/api/v1/attributes";
+  readonly url:string = "http://localhost:8080/api/v1/attribute";
   constructor(private httpClient: HttpClient) { }
 
   getAttributes() {

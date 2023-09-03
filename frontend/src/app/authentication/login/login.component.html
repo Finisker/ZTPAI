@@ -9,17 +9,11 @@
     <form #userForm="ngForm" (ngSubmit)="onSubmit()">
 
       <div class="form-input">
-          <input type="login" id="login" name="login" class="form-control " placeholder="Login"
-                 [(ngModel)]="authRequest.login"
-                 required #login="ngModel"
-          >
+          <input type="login" id="login" name="login" class="form-control " placeholder="Login">
       </div>
 
       <div class="form-input">
-        <input type="password" id="password" name="password" class="form-control" placeholder="Password"
-                 [(ngModel)]="authRequest.password"
-                 required #password="ngModel"
-        >
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password">
       </div>
 
 

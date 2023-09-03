@@ -7,8 +7,13 @@ import {Observable} from "rxjs";
 })
 export class UserService {
 
-  readonly url:string = "http://localhost:8080/api/v1/users";
+  readonly url:string = "http://localhost:8080/api/v1/user";
   constructor(private httpClient: HttpClient) { }
+
+  getAllUsers(): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.httpClient.get(this.url + "/all", { headers });
+  }
 
   setNewEmail(newEmail: string): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');

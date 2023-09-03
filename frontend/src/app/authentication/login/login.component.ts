@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {UserService} from "../../_services/user.service";
 
 @Component({
   selector: 'app-login',
@@ -9,10 +9,14 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class LoginComponent {
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-  ) {}
+    private userService: UserService
+  ) {
+
+  }
 
   onSubmit() {
+    this.userService.getAllUsers().subscribe(response => {
+      console.log(response);
+    })
   }
 }

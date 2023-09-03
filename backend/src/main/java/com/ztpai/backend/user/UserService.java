@@ -29,7 +29,7 @@ public class UserService {
         return userRepository.findById(id).orElseThrow( () -> new UsernameNotFoundException("User not found"));
     }
 
-    public void addNewUser(User user) {
+    public void addUser(User user) {
         Optional<User> userOptional = userRepository.findByLogin(user.getLogin());
         Optional<User> userOptional2 = userRepository.findByEmail(user.getLogin());
 
