@@ -22,8 +22,12 @@ import { UserSettingsMenuComponent } from './menus/user-settings-menu/user-setti
 import { CharacterWindowComponent } from './character-menagement/character-window/character-window.component';
 import { CharacterCreationComponent } from './character-menagement/character-creation/character-creation.component';
 import {AuthModule} from "./authentication/auth.module";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {AuthService} from "./_services/auth.service";
+import {AuthInterceptor} from "./interceptors/auth.interceptor";
 
 @NgModule({
   declarations: [
@@ -52,9 +56,17 @@ import {CommonModule} from "@angular/common";
     AppRoutingModule,
     AuthModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService, {provide:
+
+    HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

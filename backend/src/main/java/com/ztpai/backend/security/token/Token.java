@@ -36,7 +36,7 @@ public class Token {
     private TokenType tokenType = TokenType.BEARER;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id",referencedColumnName = "user_id")
+    @JoinColumn(name = "my_user_id",referencedColumnName = "my_user_id")
     private User user;
     @Override
     public boolean equals(Object o) {

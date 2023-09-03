@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import {UserService} from "../../_services/user.service";
+import {AuthRequest} from "../../_models/AuthRequest";
+import {ActivatedRoute, Router} from "@angular/router";
+import {AuthService} from "../../_services/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -8,15 +10,22 @@ import {UserService} from "../../_services/user.service";
 })
 export class LoginComponent {
 
-  constructor(
-    private userService: UserService
-  ) {
+  authRequest: AuthRequest;
 
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private authService: AuthService
+  ) {
+    this.authRequest = new AuthRequest();
   }
 
   onSubmit() {
-    this.userService.getAllUsers().subscribe(response => {
-      console.log(response);
-    })
+    this.authService.authenticate(this.authRequest).subscribe(response => {
+      localStorage.setItem('token', response.token);
+      localStorage.setItem('refreshToken', response.refreshToken);
+      localStorage.setItem('id', response.uniqueId);
+      this.router.navigate(['/main']);
+    });
   }
 }
