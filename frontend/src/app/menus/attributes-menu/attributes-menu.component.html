@@ -1,29 +1,4 @@
-<div class="attributes-menu-container">
-    <app-attribute-summary></app-attribute-summary>
-    <hr>
-    <app-attribute-summary></app-attribute-summary>
-    <hr>
-    <app-attribute-summary></app-attribute-summary>
-    <hr>
-    <app-attribute-summary></app-attribute-summary>
-    <hr>
-    <app-attribute-summary></app-attribute-summary>
-    <hr>
-    <app-attribute-summary></app-attribute-summary>
-    <hr>
-    <app-attribute-summary></app-attribute-summary>
-    <hr>
-    <app-attribute-summary></app-attribute-summary>
-    <hr>
-    <app-attribute-summary></app-attribute-summary>
-    <hr>
-    <app-attribute-summary></app-attribute-summary>
-    <hr>
-    <app-attribute-summary></app-attribute-summary>
-    <hr>
-    <app-attribute-summary></app-attribute-summary>
-    <hr>
-    <app-attribute-summary></app-attribute-summary>
-    <hr>
-    <app-attribute-summary></app-attribute-summary>
+<div class="attributes-menu-container" *ngFor="let attribute of attributes">
+  <app-attribute-summary [attribute]="attribute"></app-attribute-summary>
+  <hr>
 </div>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Attribute} from "../../_models/attribute";
 
 @Component({
   selector: 'app-attribute-summary',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./attribute-summary.component.scss']
 })
 export class AttributeSummaryComponent {
-
+  @Input()
+  attribute: Attribute = new Attribute();
 }
