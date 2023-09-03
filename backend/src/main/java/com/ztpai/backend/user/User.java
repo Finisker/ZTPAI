@@ -16,12 +16,13 @@ import java.util.Set;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "my_user")
+@Entity(name="my_user")
 public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(name = "my_user_id")
+    private int userId;
 
     @Basic
     @Generated(GenerationTime.INSERT)
