@@ -1,29 +1,72 @@
 package com.ztpai.backend.user;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+import java.util.Map;
+
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
+@RequiredArgsConstructor
 @RequestMapping(path = "api/v1/user")
 public class UserController {
 
     private final UserService userService;
-
-    @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+    private final PasswordEncoder passwordEncoder;
 
     @GetMapping("/all")
-    public List<User> getUsers() {
-        return userService.getUsers();
+    public ResponseEntity<List<UserResponse>> getAllUsers() {
+        var users = userService.getAllUsers();
+        return ResponseEntity.ok(users);
     }
 
-    @PostMapping("/register")
-    public void registerNewUser(@RequestBody User user){
-        userService.addUser(user);
+
+    @PostMapping("/setNewEmail/{newEmail}")
+    public ResponseEntity<Map<String, String>> setNewEmail(@PathVariable String newEmail, Authentication authentication)
+    {
+        var user = authentication.getName();
+        var userEntity = userService.getUserByEmail(user);
+        userService.setNewEmail(userEntity,newEmail);
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Email został zmieniony, wyloguj i zaloguj się ponownie aby zastosować zmiany");
+
+        return ResponseEntity.ok(response);
     }
 
+    @PostMapping("/setNewPassword")
+    public ResponseEntity<Map<String, String>> setNewPassword(@RequestBody Map<String, String> passwordData, Authentication authentication) {
+        var user = authentication.getName();
+        var userEntity = userService.getUserByEmail(user);
+
+        String oldPassword = passwordData.get("oldPassword");
+        String newPassword = passwordData.get("newPassword");
+
+        if (!(passwordEncoder.matches(oldPassword, userEntity.getPassword()))) {
+            Map<String, String> response = new HashMap<>();
+            response.put("error", "Stare hasło nieprawidłowe");
+            return ResponseEntity.badRequest().body(response);
+        } else {
+            userService.setNewPassword(userEntity, passwordEncoder.encode(newPassword));
+            Map<String, String> response = new HashMap<>();
+            response.put("message", "Hasło zmienione poprawnie, wyloguj i zaloguj się ponownie aby zastosować zmiany");
+            return ResponseEntity.ok(response);
+        }
+    }
+
+    @DeleteMapping("/deleteAccount")
+    public ResponseEntity<Map<String, String>> deleteAccount(Authentication authentication) {
+        var user = authentication.getName();
+        var userEntity = userService.getUserByEmail(user);
+
+        userService.deleteUser(userEntity);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Konto usunięte, wyloguj się");
+        return ResponseEntity.ok(response);
+    }
 }

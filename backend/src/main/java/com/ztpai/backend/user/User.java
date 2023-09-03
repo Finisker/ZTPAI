@@ -1,14 +1,18 @@
 package com.ztpai.backend.user;
 
 import com.ztpai.backend.character.Character;
+import com.ztpai.backend.security.token.Token;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenerationTime;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 @Getter
@@ -30,13 +34,6 @@ public class User implements UserDetails {
     private String uniqueID;
 
     @Column(
-            name = "login",
-            nullable = false,
-            unique = true
-    )
-    private String login;
-
-    @Column(
             name = "email",
             nullable = false,
             unique = true
@@ -56,8 +53,10 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    public User(String login, String password, String email, String nickname, Set<Character> characterSet) {
-        this.login = login;
+    @OneToMany(mappedBy = "user" ,cascade = CascadeType.ALL)
+    private List<Token> tokens;
+
+    public User(String password, String email, String nickname, Set<Character> characterSet) {
         this.password = password;
         this.email = email;
         this.nickname = nickname;
@@ -65,32 +64,45 @@ public class User implements UserDetails {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return userId == user.userId && Objects.equals(email, user.email) && Objects.equals(password, user.password) && Objects.equals(nickname, user.nickname)  && Objects.equals(uniqueID, user.uniqueID);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId, email, password, nickname, uniqueID);
+    }
+
+    @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return List.of(new SimpleGrantedAuthority(role.name()));
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return this.email;
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 }

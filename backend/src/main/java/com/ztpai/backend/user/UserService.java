@@ -1,24 +1,28 @@
 package com.ztpai.backend.user;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class UserService {
+    private final UserRepository  userRepository;
+    private final UserMapper userMapper = new UserMapper();
+    public void addUser(User user) {
+        //check if email is already in use
+        if(userRepository.findByEmail(user.getEmail()).isPresent()) {
+            throw new IllegalArgumentException("Email already in use");
+        }
 
-    private final UserRepository userRepository;
-
-    @Autowired
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
+        userRepository.save(user);
     }
 
-    public List<User> getUsers(){
-        return userRepository.findAll();
+    public void saveChanges(User user) {
+        userRepository.save(user);
     }
 
     public User getUserByEmail(String email) {
@@ -29,18 +33,42 @@ public class UserService {
         return userRepository.findById(id).orElseThrow( () -> new UsernameNotFoundException("User not found"));
     }
 
-    public void addUser(User user) {
-        Optional<User> userOptional = userRepository.findByLogin(user.getLogin());
-        Optional<User> userOptional2 = userRepository.findByEmail(user.getLogin());
+    public User getUserByUniqueID(String uniqueID) {
+        return userRepository.findByUniqueID(uniqueID).orElseThrow( () -> new UsernameNotFoundException("User not found"));
+    }
 
-        if (userOptional.isPresent()){
-            throw new IllegalStateException("login taken");
-        }
+    public List<UserResponse> getAllUsers() {
+        var users =  userRepository.findAll();
+        return userMapper.mapUsers(users);
+    }
 
-        if (userOptional2.isPresent()){
-            throw new IllegalStateException("email taken");
-        }
+    public List<User> getUsersByUniqueID(List<String> participants) {
+        var userList = new ArrayList<User>();
+        participants.forEach(
+                participant -> {
+                    if(userRepository.findByUniqueID(participant).isEmpty()) {
+                        throw new IllegalArgumentException("User not found");
+                    }else{
+                        userList.add(userRepository.findByUniqueID(participant).get());
+                    }
 
+                }
+        );
+        return userList;
+    }
+
+
+    public void setNewEmail(User user, String newEmail) {
+        user.setEmail(newEmail);
         userRepository.save(user);
+    }
+
+    public void setNewPassword(User user, String newPassword) {
+        user.setPassword(newPassword);
+        userRepository.save(user);
+    }
+
+    public void deleteUser(User user) {
+        userRepository.delete(user);
     }
 }
