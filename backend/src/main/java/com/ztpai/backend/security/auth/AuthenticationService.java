@@ -108,7 +108,7 @@ public class AuthenticationService {
     }
 
     private void revokeTokens(User user) {
-        var validTokens = tokenService.getAllValidTokenByUser(user.getId());
+        var validTokens = tokenService.getAllValidTokenByUser(user.getUserId());
         if (validTokens.isEmpty()) return;
         validTokens.forEach(token -> token.setRevoked(true));
         tokenService.saveAllTokens(validTokens);
