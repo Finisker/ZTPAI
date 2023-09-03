@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Talent} from "../../_models/talent";
 
 @Component({
   selector: 'app-talent-summary',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./talent-summary.component.scss']
 })
 export class TalentSummaryComponent {
-
+  @Input()
+  talent: Talent = new Talent();
 }
