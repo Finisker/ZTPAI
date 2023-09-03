@@ -18,7 +18,7 @@ public class RaceController {
         this.raceService = raceService;
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Race> getRaces() {
         return raceService.getRaces();
     }

@@ -10,7 +10,6 @@ $gray: #343A40;
   width: 100%;
 
   justify-content: space-around;
-  align-content: center;
 
   background-image: linear-gradient($orange,$gray);
 }
@@ -46,27 +45,25 @@ $gray: #343A40;
 }
 
 .login-input{
-  width: 50%;
-  height: 10%;
+  width: 100%;
+  height: 15%;
 
   margin-bottom: 4vh;
 }
 
 .password-input{
-  width: 50%;
-  height: 10%;
+  width: 100%;
+  height: 15%;
 
   margin-bottom: 3vh;
 }
 
 .login-button-container{
-  width: 20%;
-  height: 10%;
+  width: 80%;
+  height: 20%;
 
   margin-bottom: 2vh;
-}
-
-.register{
+  margin-left: 10%;
 }
 
 input{
@@ -77,8 +74,8 @@ input{
   text-indent: 1vw;
 }
 
-p{
-  font-size: x-large;
+.member{
+  font-size: large;
 }
 
 button{

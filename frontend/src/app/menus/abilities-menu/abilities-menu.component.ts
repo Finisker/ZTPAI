@@ -13,10 +13,15 @@ export class AbilitiesMenuComponent {
   constructor(private abilityService: AbilityService) {
   }
 
-  getCharacters() {
+  ngOnInit() {
+
     this.abilityService.getAbilities().subscribe(response => {
-        this.abilities = response;
-      }
-    );
+      this.abilities = response;
+    });
+
+  }
+
+  public test(){
+    console.log(this.abilities[0].name);
   }
 }

@@ -16,7 +16,7 @@ public class TalentController {
         this.talentService = talentService;
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Talent> getTalents() {
         return talentService.getTalents();
     }

@@ -18,7 +18,7 @@ public class ProfessionController {
         this.professionService = professionService;
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Profession> getProfessions() {
         return professionService.getProfessions();
     }

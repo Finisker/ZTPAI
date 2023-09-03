@@ -6,19 +6,31 @@
       <img class="logo" src="../../../assets/images/WH_logo.svg" alt="WH_logo.svg">
     </div>
 
-    <div class="login-input">
-      <input type="text" placeholder="login">
-    </div>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()">
 
-    <div class="password-input">
-      <input type="password" placeholder="password">
-    </div>
+      <div class="login-input">
+          <input type="login" id="login" name="login" class="form-control " placeholder="Login"
+                 [(ngModel)]="authRequest.login"
+                 required #login="ngModel"
+          >
+      </div>
 
-    <a class="login-button-container" onclick="loginUser()">
-      <button class="login-button">LOGIN!</button>
-    </a>
+      <div class="password-input">
+        <input type="password" id="password" name="password" class="form-control" placeholder="*******"
+                 [(ngModel)]="authRequest.password"
+                 required #password="ngModel"
+        >
+      </div>
 
-    <a href="/register" class="register">Jeżeli nie masz konta zarejestruj się!</a>
+
+      <div class="login-button-container">
+        <button type="submit">Login</button>
+      </div>
+
+      <div class="member">
+        Nie masz konta? <a href="register"> Zajerestruj się!</a>
+      </div>
+    </form>
   </div>
 
 </div>

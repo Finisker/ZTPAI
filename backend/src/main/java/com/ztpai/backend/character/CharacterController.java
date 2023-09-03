@@ -16,12 +16,12 @@ public class CharacterController {
         this.characterService = characterService;
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Character> getCharacters() {
         return characterService.getCharacters();
     }
 
-    @PostMapping
+    @PostMapping("/register")
     public void registerNewCharacter(@RequestBody Character user){
         characterService.addNewCharacter(user);
     }

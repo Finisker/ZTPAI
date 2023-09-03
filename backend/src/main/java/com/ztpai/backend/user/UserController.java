@@ -16,12 +16,12 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<User> getUsers() {
         return userService.getUsers();
     }
 
-    @PostMapping
+    @PostMapping("/register")
     public void registerNewUser(@RequestBody User user){
         userService.addNewUser(user);
     }

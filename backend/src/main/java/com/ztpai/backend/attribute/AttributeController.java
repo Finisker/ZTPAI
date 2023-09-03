@@ -18,7 +18,7 @@ public class AttributeController {
         this.attributeService = attributeService;
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Attribute> getAttributes() {
         return attributeService.getAttributes();
     }

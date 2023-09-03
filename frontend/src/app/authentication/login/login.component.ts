@@ -9,7 +9,7 @@ import {AuthRequest} from "../../_models/authRequest";
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  private authRequest: AuthRequest;
+  authRequest: AuthRequest;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,7 +19,7 @@ export class LoginComponent {
     this.authRequest = new AuthRequest();
   }
 
-  loginUser() {
+  onSubmit() {
     this.authService.authenticate(this.authRequest).subscribe(response => {
       localStorage.setItem('token', response.token);
       localStorage.setItem('refreshToken', response.refreshToken);
