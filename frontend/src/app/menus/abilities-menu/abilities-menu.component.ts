@@ -20,8 +20,4 @@ export class AbilitiesMenuComponent {
     });
 
   }
-
-  public test(){
-    console.log(this.abilities[0].name);
-  }
 }

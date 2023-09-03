@@ -9,8 +9,4 @@ import {Ability} from "../../_models/ability";
 export class AbilitySummaryComponent {
   @Input()
   ability: Ability = new Ability();
-
-  public test(){
-    console.log(this.ability.name);
-  }
 }
