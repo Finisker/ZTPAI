@@ -15,7 +15,9 @@
       </div>
 
       <div class="form-input">
-        <input type="nickname" id="nickname" name="nickname" class="form-control " placeholder="Nickname">
+        <input type="nickname" id="nickname" name="nickname" class="form-control " placeholder="Nickname"
+               [(ngModel)]="user.nickname"
+               required #nickname="ngModel"/>
       </div>
 
       <div class="form-input">
