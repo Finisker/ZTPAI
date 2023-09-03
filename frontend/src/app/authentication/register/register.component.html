@@ -6,31 +6,50 @@
       <img class="logo" src="../../../assets/images/WH_logo.svg" alt="WH_logo.svg">
     </div>
 
-    <div class="login-input">
-      <input type="text" placeholder="login">
-    </div>
+    <form class="mx-1 mx-md-4" #userForm="ngForm" (ngSubmit)="onSubmit()">
 
-    <div class="nickname-input">
-      <input type="text" placeholder="nickname">
-    </div>
+      <div class="form-input">
+        <input type="login" id="login" name="login" class="form-control " placeholder="Login"
+               [(ngModel)]="user.login"
+               required #login="ngModel"
+        >
+      </div>
 
-    <div class="email-input">
-      <input type="text" placeholder="email">
-    </div>
+      <div class="form-input">
+        <input type="nickname" id="nickname" name="nickname" class="form-control " placeholder="Nickname"
+               [(ngModel)]="user.nickname"
+               required #nickname="ngModel"
+        >
+      </div>
 
-    <div class="password-input">
-      <input type="password" placeholder="password">
-    </div>
+      <div class="form-input">
+        <input type="email" id="email" name="email" class="form-control " placeholder="Email"
+               [(ngModel)]="user.email"
+               required #email="ngModel"
+        >
+      </div>
 
-    <div class="repeat-password-input">
-      <input type="password" placeholder="repeat password">
-    </div>
+      <div class="form-input">
+        <input type="password" id="password" name="password" class="form-control " placeholder="Password"
+               [(ngModel)]="user.password"
+               required #password="ngModel"
+        >
+      </div>
 
-    <a class="register-button-container" onclick="registerUser()">
-      <button class="register-button">REGISTER!</button>
-    </a>
+      <div class="form-input">
+        <input type="password" id="form3Example4cd" class="form-control" placeholder="Repeat Password"
 
-    <a href="/login" class="register">Jeżeli masz konto zaloguj się!</a>
+        />
+      </div>
+
+      <div class="register-button-container">
+        <button type="submit">Register</button>
+      </div>
+
+      <div class="member">
+        Masz konto? <a href="login"> Zaloguj się!</a>
+      </div>
+    </form>
   </div>
 
 </div>

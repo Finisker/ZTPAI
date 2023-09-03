@@ -32,12 +32,12 @@ $gray: #343A40;
   display: flex;
   flex-direction: column;
 
-  justify-content: center;
   align-items: center;
 }
 
 .logo-container{
   height: 14%;
+  margin-top: 6vh;
   margin-bottom: 6vh;
 }
 
@@ -45,58 +45,30 @@ $gray: #343A40;
   height: 100%;
 }
 
-.login-input{
-  width: 50%;
-  height: 7%;
+.form-input{
+  width: 100%;
+  height: 15%;
 
   margin-bottom: 2vh;
-}
-
-.nickname-input{
-  width: 50%;
-  height: 7%;
-
-  margin-bottom: 2vh;
-}
-
-.email-input{
-  width: 50%;
-  height: 7%;
-
-  margin-bottom: 2vh;
-}
-
-.password-input{
-  width: 50%;
-  height: 7%;
-
-  margin-bottom: 2vh;
-}
-
-.repeat-password-input{
-  width: 50%;
-  height: 7%;
-
-  margin-bottom: 3vh;
 }
 
 .register-button-container{
-  width: 20%;
-  height: 8%;
+  width: 100%;
+  height: 20%;
 
   margin-bottom: 2vh;
 }
 
 input{
   height: 100%;
-  width:100%;
+  width: 100%;
   font-size: medium;
 
   text-indent: 1vw;
 }
 
-p{
-  font-size: x-large;
+.member{
+  font-size: large;
 }
 
 button{

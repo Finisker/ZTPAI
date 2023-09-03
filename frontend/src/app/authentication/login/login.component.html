@@ -8,15 +8,15 @@
 
     <form #userForm="ngForm" (ngSubmit)="onSubmit()">
 
-      <div class="login-input">
+      <div class="form-input">
           <input type="login" id="login" name="login" class="form-control " placeholder="Login"
                  [(ngModel)]="authRequest.login"
                  required #login="ngModel"
           >
       </div>
 
-      <div class="password-input">
-        <input type="password" id="password" name="password" class="form-control" placeholder="*******"
+      <div class="form-input">
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password"
                  [(ngModel)]="authRequest.password"
                  required #password="ngModel"
         >

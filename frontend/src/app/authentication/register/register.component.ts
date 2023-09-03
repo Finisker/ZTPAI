@@ -20,14 +20,14 @@ export class RegisterComponent {
     this.user = new User();
   }
 
-  registerUser() {
+  onSubmit() {
     this.userService.save(this.user).subscribe(response =>{
 
       console.log(response);
       localStorage.setItem('token',response.token );
       localStorage.setItem('refreshToken',response.refreshToken );
       localStorage.setItem('id',response.uniqueId );
-      this.router.navigate(['/chat']);
+      this.router.navigate(['/main']);
     });
   }
 }
