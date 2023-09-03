@@ -26,7 +26,7 @@ public class User implements UserDetails {
 
     @Basic
     @Generated(GenerationTime.INSERT)
-    @Column(name = "unique_id", unique = true,columnDefinition = "varchar(255) default '#'::text || lpad(((nextval('user_user_id_seq'::regclass))::character varying)::text, 5, '0'::text)")
+    @Column(name = "unique_id", unique = true,columnDefinition = "varchar(255) default '#'::text || lpad(((nextval('my_user_my_user_id_seq'::regclass))::character varying)::text, 5, '0'::text)")
     private String uniqueID;
 
     @Column(
