@@ -1,7 +1,17 @@
 <div  class="characters-menu-container">
-  <div *ngFor="let character of characters ">
-    <app-functional-character-miniature [character]=character (displayCharacterEvent)="displayCharacter($event)"></app-functional-character-miniature>
-  </div>
+<!--  <div *ngFor="let character of characters ">-->
+<!--    <app-functional-character-miniature [character]=character (displayCharacterEvent)="displayCharacter($event)"></app-functional-character-miniature>-->
+<!--  </div>-->
+  <app-functional-character-miniature (displayCharacterEvent)="displayCharacter($event)"></app-functional-character-miniature>
+  <app-functional-character-miniature (displayCharacterEvent)="displayCharacter($event)"></app-functional-character-miniature>
+  <app-functional-character-miniature (displayCharacterEvent)="displayCharacter($event)"></app-functional-character-miniature>
+  <app-functional-character-miniature (displayCharacterEvent)="displayCharacter($event)"></app-functional-character-miniature>
+  <app-functional-character-miniature (displayCharacterEvent)="displayCharacter($event)"></app-functional-character-miniature>
+  <app-functional-character-miniature (displayCharacterEvent)="displayCharacter($event)"></app-functional-character-miniature>
+  <app-functional-character-miniature (displayCharacterEvent)="displayCharacter($event)"></app-functional-character-miniature>
+  <app-functional-character-miniature (displayCharacterEvent)="displayCharacter($event)"></app-functional-character-miniature>
+  <app-functional-character-miniature (displayCharacterEvent)="displayCharacter($event)"></app-functional-character-miniature>
+  <app-functional-character-miniature (displayCharacterEvent)="displayCharacter($event)"></app-functional-character-miniature>
   <button class="add_character">
     <img class="plus" src="../../../assets/images/plus.svg" alt="Add Character" (click)="addCharacter()">
   </button>
