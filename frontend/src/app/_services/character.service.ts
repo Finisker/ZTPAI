@@ -11,9 +11,11 @@ export class CharacterService {
   readonly url:string = "http://localhost:8080/api/v1/characters";
   constructor(private httpClient: HttpClient) { }
 
-  getCharacters() {
+  getCharactersByUniqUserId(uniqueId: string) {
     const headers = new HttpHeaders().set('Content-Type','application/json');
-    return this.httpClient.get<Character[]>(this.url+"/all",{headers});
+    var url = this.url+"/getCharacters/" + uniqueId;
+    console.log(url);
+    return this.httpClient.get<Character[]>(url,{headers});
   }
 
   deleteCharacter(): Observable<any> {

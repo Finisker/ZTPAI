@@ -1,6 +1,6 @@
 <div  class="characters-menu-container">
-  <div *ngForOf="let character of characters ">
-    <app-functional-character-miniature [character]=character></app-functional-character-miniature>
+  <div *ngFor="let character of characters ">
+    <app-functional-character-miniature [character]=character (displayCharacterEvent)="displayCharacter($event)"></app-functional-character-miniature>
   </div>
   <button class="add_character">
     <img class="plus" src="../../../assets/images/plus.svg" alt="Add Character" (click)="addCharacter()">

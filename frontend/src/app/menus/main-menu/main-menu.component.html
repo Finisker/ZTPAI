@@ -28,7 +28,10 @@
   <div class="lower-container">
 
     <div *ngIf="currentPage==='characters'">
-      <app-characters-menu (addCharacterEvent)="handleCurrentPageChange('addCharacter')"></app-characters-menu>
+      <app-characters-menu
+        (addCharacterEvent)="handleCurrentPageChange('addCharacter')"
+        (displayCharacterEvent)="doDisplayCharacter($event)"
+      ></app-characters-menu>
     </div>
 
     <div *ngIf="currentPage==='races'">
@@ -57,6 +60,10 @@
 
     <div *ngIf="currentPage==='addCharacter'">
       <app-character-creation></app-character-creation>
+    </div>
+
+    <div *ngIf="currentPage==='displayCharacter'">
+      <app-character-window [character]="displayCharacter"></app-character-window>
     </div>
   </div>
 

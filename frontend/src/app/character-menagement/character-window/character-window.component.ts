@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Character} from "../../_models/character";
 
 @Component({
   selector: 'app-character-window',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class CharacterWindowComponent {
 
+  @Input() character: Character = new Character();
+
+  test(){
+    console.log("character window"+this.character);
+  }
 }

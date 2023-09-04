@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Character} from "../../_models/character";
 
 @Component({
@@ -8,6 +8,8 @@ import {Character} from "../../_models/character";
 })
 export class FunctionalCharacterMiniatureComponent {
 
+  @Output() displayCharacterEvent = new EventEmitter<Character>();
+
   @Input()
   character: Character;
 
@@ -15,9 +17,8 @@ export class FunctionalCharacterMiniatureComponent {
     this.character = new Character();
   }
 
-  // public openNewWindow(url:string , features:string): boolean{
-  //   window.open(url,'popup',features);
-  //   return false;
-  // }
-
+  displayCharacter(){
+    console.log("Functional miniature" + this.character);
+    this.displayCharacterEvent.next(this.character);
+  }
 }

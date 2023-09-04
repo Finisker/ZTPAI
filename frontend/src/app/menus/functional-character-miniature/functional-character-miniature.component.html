@@ -1,10 +1,8 @@
 <div class="container">
 <!--  <a href="/character" target="popup" onclick="openNewWindow('/character','width=600,height=600')">-->
-  <a href="/character" target="popup" onclick="window.open('/character','popup','width=600,height=600'); return false;">
-    <button class="character_button">
-      <img src="../../../assets/images/placeholder-avatar.jpg" alt="Not Found" onerror="this.src = 'assets/placeholder-avatar.jpg'">
-    </button>
-  </a>
+  <button class="character_button" (click)="displayCharacter()">
+    <img src="../../../assets/images/placeholder-avatar.jpg" alt="Not Found" onerror="this.src = 'assets/placeholder-avatar.jpg'">
+  </button>
   <div class="character_summary">
     {{character.name}}<br>
     {{character.race}}<br>

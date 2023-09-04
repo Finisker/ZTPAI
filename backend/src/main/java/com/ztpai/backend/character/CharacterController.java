@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 @RestController
 @RequestMapping(path = "api/v1/characters")
@@ -12,14 +13,18 @@ public class CharacterController {
 
     private final CharacterService characterService;
 
+    public static Logger logger=Logger.getLogger("global");
+
+
     @Autowired
     public CharacterController(CharacterService characterService) {
         this.characterService = characterService;
     }
 
-    @GetMapping("/all")
-    public List<Character> getCharacters() {
-        return characterService.getCharacters();
+    @GetMapping("/getCharacters/{uniqueId}")
+    public List<Character> getCharactersByUniqUserId(@PathVariable String uniqueId) {
+        logger.info("Character Controller, uniqueId: " + uniqueId);
+        return characterService.getCharactersByUniqueUserId(uniqueId);
     }
 
     @PostMapping("/register")

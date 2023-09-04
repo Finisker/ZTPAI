@@ -15,8 +15,8 @@ public class CharacterService {
         this.characterRepository = characterRepository;
     }
 
-    public List<Character> getCharacters(){
-        return characterRepository.findAll();
+    public List<Character> getCharactersByUniqueUserId(String uniqueID){
+        return characterRepository.findAllCharactersByUserUniqueId(uniqueID);
     }
 
     public void addNewCharacter(Character character) {

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AuthService} from "../../_services/auth.service";
 import {Router} from "@angular/router";
+import {Character} from "../../_models/character";
 
 @Component({
   selector: 'app-main-menu',
@@ -10,6 +11,8 @@ import {Router} from "@angular/router";
 export class MainMenuComponent implements OnInit{
   private _currentPage : string = "";
   private _imgPath : string = "";
+
+  displayCharacter: Character = new Character();
 
 
   constructor(private router: Router,
@@ -38,7 +41,6 @@ export class MainMenuComponent implements OnInit{
   }
 
   public handleCurrentPageChange(currentPage:string) : void{
-
     let result = this._currentPage != currentPage ? currentPage : "";
     this.setCurrentPage(result);
     sessionStorage.setItem("currentPage",this._currentPage);
@@ -50,5 +52,11 @@ export class MainMenuComponent implements OnInit{
       this.router.navigate(['/login']);
     });
 
+  }
+
+  doDisplayCharacter(character: Character){
+    console.log("doDisplayCharacter" + this.displayCharacter);
+    this.displayCharacter = character;
+    this.handleCurrentPageChange("displayCharacter");
   }
 }

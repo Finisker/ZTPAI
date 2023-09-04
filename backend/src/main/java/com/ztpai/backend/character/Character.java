@@ -7,10 +7,7 @@ import com.ztpai.backend.profession.Profession;
 import com.ztpai.backend.race.Race;
 import com.ztpai.backend.user.User;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Set;
 @Getter

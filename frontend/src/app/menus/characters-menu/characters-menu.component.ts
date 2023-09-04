@@ -11,20 +11,33 @@ export class CharactersMenuComponent {
 
   @Output() addCharacterEvent = new EventEmitter<void>();
 
+  @Output() displayCharacterEvent = new EventEmitter<Character>();
+
   characters: Character[] = [];
 
+
   constructor(private characterService: CharacterService) {
+    this.getCharacters();
   }
 
   getCharacters() {
-      this.characterService.getCharacters().subscribe(response => {
+
+    let uniqueId = localStorage.getItem("id");
+    if(uniqueId) {
+      this.characterService.getCharactersByUniqUserId(uniqueId).subscribe(response => {
           this.characters = response;
         }
       );
+    }
   }
 
   addCharacter(): void{
     this.addCharacterEvent.next();
+  }
+
+  displayCharacter(character: Character){
+    console.log("character menu" + character);
+    this.displayCharacterEvent.next(character);
   }
 
 }
