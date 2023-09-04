@@ -2,12 +2,30 @@
   display: flex;
   flex-direction: row;
 
-  margin-bottom: 2vh;
-}
-
-.Name{
-  margin-right: 2vw;
+  margin-bottom: 5vh;
 }
 
 .Description{
+  position: absolute;
+  left: 17%;
+
+  padding-right: 5vw;
+}
+
+@media only screen and (max-device-width: 900px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 5vh;
+  }
+
+  .Name{
+    margin-bottom: 2vh;
+  }
+
+  .Description{
+    position: relative;
+    left: auto;
+  }
 }

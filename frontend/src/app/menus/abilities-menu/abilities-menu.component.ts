@@ -18,6 +18,5 @@ export class AbilitiesMenuComponent {
     this.abilityService.getAbilities().subscribe(response => {
       this.abilities = response;
     });
-
   }
 }

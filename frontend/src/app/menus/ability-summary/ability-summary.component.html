@@ -1,14 +1,13 @@
 <div class="container">
   <div class="top">
     <p class="margined bold large">{{ability.name}}</p>
-    <p class="margined bold large">({{ability.attribute.name}})</p>
-    <p class="margined large">{{ability.advanced}}</p>
+    <p class="margined large">{{ability.attribute.name}}</p>
   </div>
   <div>
     <p>{{ability.description}}</p>
   </div>
-  <div *ngIf="ability.specializations.length>0" class="specialization large">
-    <p class="bold large specialization-text">Specializations: </p>
+  <div *ngIf="ability.specializations" class="specialization large">
+    <p class="bold large specialization-text">Specializacje: </p>
     <p>{{ability.specializations}}</p>
   </div>
 </div>

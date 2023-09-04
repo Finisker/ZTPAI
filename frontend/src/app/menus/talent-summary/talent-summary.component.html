@@ -1,13 +1,13 @@
 <div class="container">
   <p class="bold large">{{talent.name}}</p>
 
-  <div class="tests large">
-    <p class="tests-text">Tests: </p>
+  <div *ngIf="talent.tests" class="specialization large">
+    <p class="bold large specialization-text">Testy: </p>
     <p>{{talent.tests}}</p>
   </div>
 
   <div class="maksimum large">
-    <p class="maksimum-text bold">Maksimum: </p>
+    <p class="bold maksimum-text">Maksimum: </p>
     <p>{{talent.maxBuyable}}</p>
   </div>
 
@@ -18,9 +18,12 @@
   <div class="bottom">
     <p>{{talent.description}}</p>
   </div>
-  <div class="specialization large">
-    <p class="bold large specialization-text">Specializations: </p>
-    <p class="large">{{talent.specializations}}</p>
+
+  <div *ngIf="talent.specializations" class="specialization large">
+    <p class="bold large specialization-text">Specializacje: </p>
+    <p>{{talent.specializations}}</p>
   </div>
+
+
 </div>
 
