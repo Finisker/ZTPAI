@@ -28,7 +28,7 @@
   <div class="lower-container">
 
     <div *ngIf="currentPage==='characters'">
-      <app-characters-menu></app-characters-menu>
+      <app-characters-menu (addCharacterEvent)="handleCurrentPageChange('addCharacter')"></app-characters-menu>
     </div>
 
     <div *ngIf="currentPage==='races'">
@@ -53,6 +53,10 @@
 
     <div *ngIf="currentPage==='user'">
       <app-user-settings-menu></app-user-settings-menu>
+    </div>
+
+    <div *ngIf="currentPage==='addCharacter'">
+      <app-character-creation></app-character-creation>
     </div>
   </div>
 

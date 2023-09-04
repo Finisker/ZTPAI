@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {Character} from "../../_models/character";
 import {CharacterService} from "../../_services/character.service";
 
@@ -8,6 +8,9 @@ import {CharacterService} from "../../_services/character.service";
   styleUrls: ['./characters-menu.component.scss']
 })
 export class CharactersMenuComponent {
+
+  @Output() addCharacterEvent = new EventEmitter<void>();
+
   characters: Character[] = [];
 
   constructor(private characterService: CharacterService) {
@@ -18,6 +21,10 @@ export class CharactersMenuComponent {
           this.characters = response;
         }
       );
+  }
+
+  addCharacter(): void{
+    this.addCharacterEvent.next();
   }
 
 }
