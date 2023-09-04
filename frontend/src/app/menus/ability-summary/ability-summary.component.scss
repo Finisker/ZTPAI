@@ -27,3 +27,13 @@
 .specialization-text{
   margin-right: 0.3vw;
 }
+
+@media only screen and (max-device-width: 900px) {
+  .top{
+    flex-direction: column;
+  }
+
+  .specialization{
+    flex-direction: column;
+  }
+}

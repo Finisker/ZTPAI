@@ -5,7 +5,7 @@
 }
 
 .maksimum-text{
-  margin-right: 0.3vw;
+  margin-right: 1vw;
 }
 
 .tests{
@@ -25,4 +25,10 @@
 
 .specialization-text{
   margin-right: 0.3vw;
+}
+
+@media only screen and (max-device-width: 900px) {
+  .tests{
+    flex-direction: column;
+  }
 }
