@@ -83,3 +83,22 @@ button{
 
   color: white;
 }
+
+@media only screen and (max-device-width: 900px) {
+
+  .login-container{
+    top: 10%;
+    width: 80%;
+    height: 80%;
+
+    transform: translateY(0%);
+  }
+
+  .logo-container{
+    margin-bottom: 10vh;
+  }
+
+  .logo{
+    height: 100%;
+  }
+}

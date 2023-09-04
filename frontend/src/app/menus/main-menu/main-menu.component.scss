@@ -115,3 +115,13 @@ button{
   margin: 0;
   height: 76.2vh;
 }
+
+@media only screen and (max-device-width: 900px) {
+  button{
+    font-size: x-large;
+  }
+
+  .main-img{
+    visibility: hidden;
+  }
+}
