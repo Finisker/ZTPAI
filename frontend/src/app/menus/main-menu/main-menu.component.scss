@@ -72,12 +72,12 @@ $linear-gradient-bottom: linear-gradient($gradient4,$gradient5 , $gray, $gray, $
   background: none;
   color: white;
   height: 100%;
-  width: 8%;
+  width: 16%;
   border-top: none;
   border-left: none;
   border-bottom: none;
   text-align: center;
-  font-size: 0.8vw;
+  font-size: large;
 }
 
 .filter_menu{
@@ -117,11 +117,17 @@ button{
 }
 
 @media only screen and (max-device-width: 900px) {
-  button{
-    font-size: x-large;
+  .context-menu-button{
+    font-size: x-small;
   }
 
   .main-img{
     visibility: hidden;
+  }
+
+  .logout_button{
+    position: absolute;
+    top: 30%;
+    left: 70%;
   }
 }
