@@ -23,7 +23,8 @@ public class Ability {
     private String name;
 
     @Column(
-            name = "description"
+            name = "description",
+            length = 1023
     )
     private String description;
 

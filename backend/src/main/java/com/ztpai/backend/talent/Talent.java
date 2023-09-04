@@ -24,7 +24,7 @@ public class Talent {
     @Column(
             name = "max_buyable"
     )
-    private int maxBuyable;
+    private String maxBuyable;
 
     @Column(
             name = "tests"
@@ -32,7 +32,8 @@ public class Talent {
     private String tests;
 
     @Column(
-            name = "description"
+            name = "description",
+            length = 1023
     )
     private String description;
 
