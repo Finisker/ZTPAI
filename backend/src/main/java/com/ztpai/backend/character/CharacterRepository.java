@@ -8,10 +8,4 @@ import java.util.List;
 
 @Repository
 public interface CharacterRepository extends JpaRepository<Character,Long> {
-
-    @Query(value = """
-            SELECT c from character c\s
-            where c.user.uniqueID = ?1
-            """)
-    List<Character> findAllCharactersByUserUniqueId(String conversationId);
 }

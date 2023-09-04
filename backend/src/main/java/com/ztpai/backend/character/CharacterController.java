@@ -21,10 +21,11 @@ public class CharacterController {
         this.characterService = characterService;
     }
 
-    @GetMapping("/getCharacters/{uniqueId}")
-    public List<Character> getCharactersByUniqUserId(@PathVariable String uniqueId) {
-        logger.info("Character Controller, uniqueId: " + uniqueId);
-        return characterService.getCharactersByUniqueUserId(uniqueId);
+    @GetMapping("/all")
+    public List<Character> getCharacters() {
+        var characters = characterService.getCharacters();
+        logger.info("Character Controller" + characters);
+        return characters;
     }
 
     @PostMapping("/register")

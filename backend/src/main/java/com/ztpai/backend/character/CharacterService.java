@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import static com.ztpai.backend.character.CharacterController.logger;
+
 @Service
 public class CharacterService {
 
@@ -15,8 +17,11 @@ public class CharacterService {
         this.characterRepository = characterRepository;
     }
 
-    public List<Character> getCharactersByUniqueUserId(String uniqueID){
-        return characterRepository.findAllCharactersByUserUniqueId(uniqueID);
+    public List<Character> getCharacters(){
+
+        var characters = characterRepository.findAll();
+        logger.info("Character Controller" + characters);
+        return characters;
     }
 
     public void addNewCharacter(Character character) {

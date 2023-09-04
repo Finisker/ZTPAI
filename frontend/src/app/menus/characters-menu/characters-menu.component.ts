@@ -17,18 +17,14 @@ export class CharactersMenuComponent {
 
 
   constructor(private characterService: CharacterService) {
-    this.getCharacters();
   }
 
-  getCharacters() {
+  ngOnInit() {
 
-    let uniqueId = localStorage.getItem("id");
-    if(uniqueId) {
-      this.characterService.getCharactersByUniqUserId(uniqueId).subscribe(response => {
-          this.characters = response;
-        }
-      );
-    }
+    this.characterService.getCharacters().subscribe(response => {
+      this.characters = response;
+    });
+
   }
 
   addCharacter(): void{
