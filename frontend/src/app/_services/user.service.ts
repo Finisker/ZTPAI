@@ -10,7 +10,7 @@ export class UserService {
   readonly url:string = "http://localhost:8080/api/v1/users";
   constructor(private httpClient: HttpClient) { }
 
-  getAllUsers(): Observable<any> {
+  getUsers(): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.httpClient.get(this.url + "/all", { headers });
   }
